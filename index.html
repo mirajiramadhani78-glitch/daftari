@@ -173,6 +173,25 @@ body{margin:0;font-size:15px;-webkit-tap-highlight-color:transparent}
 [hidden]{display:none!important}
 img{max-width:100%}
 .gatelang{display:flex;justify-content:space-between;align-items:center;gap:10px}
+
+/* on-screen report, same sheet as the PDF */
+.rep{display:flex;flex-direction:column;gap:12px}
+.rephead{background:var(--accent);color:var(--accent-ink);border-radius:var(--r);padding:14px}
+.rephead .eyebrow,.rephead .s{color:inherit;opacity:.85}
+.rephead h3{font-size:17px;margin-top:4px}
+.reptiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.reptiles .kpi b{font-size:19px}
+.rep .note{margin:0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;font-variant-numeric:tabular-nums}
+.sheet th,.sheet td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.sheet td:first-child{white-space:normal;min-width:120px}
+.sheet thead th{background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:12px}
+.sheet .n{text-align:right}
+.sheet tr.grp td{background:var(--accent-soft);color:var(--accent);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.04em}
+.sheet tr.sub td{background:var(--sunk);font-weight:700}
+.sheet tfoot td{background:var(--accent);color:var(--accent-ink);font-weight:700;border-bottom:0}
+.repsec{font-size:16px;margin-top:4px}
 </style>
 </head>
 <body>
@@ -408,8 +427,7 @@ img{max-width:100%}
     </form>
     <p class="note" id="r-note">Mauzo ya siku moja: weka tarehe ileile pande zote mbili.</p>
     <div class="panel">
-      <h2>Muonekano wa ripoti</h2>
-      <pre class="box preview" id="r-preview"></pre>
+      <div id="r-preview"></div>
     </div>
   </section>
 
