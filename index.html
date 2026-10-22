@@ -240,6 +240,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="statrow" style="border-bottom:0">
         <div><span>Faida ghafi</span><b id="kGhafi">0</b><span id="kGhafiSub"></span></div>
         <div><span>Matumizi</span><b id="kMatumizi">0</b><span id="kMatumiziSub"></span></div>
+        <div id="kRuzWrap" hidden><span>Ruzuku ya mbolea</span><b id="kRuz">0</b><span id="kRuzSub"></span></div>
         <div><span>Madeni yanayodaiwa</span><b id="kDeni" class="owe">0</b><span id="kDeniSub"></span></div>
         <div><span>Mzigo ulionunuliwa</span><b id="kMzigo">0</b><span>mtaji ulioingia stoo</span></div>
       </div>
@@ -311,6 +312,8 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="field"><label for="p-nunua" id="p-nunuaL">Bei ya kununua kwa katoni</label><input id="p-nunua" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="p-uza" id="p-uzaL">Bei ya rejareja (kwa kipande)</label><input id="p-uza" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="p-jumla" id="p-jumlaL">Bei ya jumla (kwa katoni)</label><input id="p-jumla" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <label class="check"><input type="checkbox" id="p-ruz"> Mbolea ya ruzuku ya serikali</label>
+      <div class="field full" id="p-ruzField" hidden><label for="p-ruzMfuko" id="p-ruzMfukoL">Ruzuku ya serikali kwa mfuko (TSh)</label><input id="p-ruzMfuko" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field full"><label for="p-chini" id="p-chiniL">Nionye stoo ikifika (ctn)</label><input id="p-chini" type="number" inputmode="decimal" min="0" step="any" placeholder="2"></div>
       <div class="field"><label for="p-ctn" id="p-ctnL">Stoo iliyopo: katoni</label><input id="p-ctn" type="number" inputmode="numeric" min="0" step="1" placeholder="0"></div>
       <div class="field"><label for="p-pcs" id="p-pcsL">na vipande vya ziada</label><input id="p-pcs" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
