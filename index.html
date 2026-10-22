@@ -192,6 +192,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
 .sheet tr.sub td{background:var(--sunk);font-weight:700}
 .sheet tfoot td{background:var(--accent);color:var(--accent-ink);font-weight:700;border-bottom:0}
 .repsec{font-size:16px;margin-top:4px}
+.btn.danger{background:var(--bad);color:#fff}
 </style>
 </head>
 <body>
@@ -481,6 +482,16 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
           <div class="actions" style="margin-top:8px"><label class="btn alt" for="importFile" style="cursor:pointer">Ingiza data kutoka faili</label><input type="file" id="importFile" accept=".json,application/json" hidden></div>
         </div>
       </div>
+    </div>
+    <div class="panel" id="wipePanel" hidden>
+      <h2>Anza upya <small>wewe tu unaona hapa</small></h2>
+      <form class="box" id="wipeForm" novalidate>
+        <p class="hint">Inafuta mauzo, mizigo, matumizi na madeni yote, kwa mfano baada ya majaribio. Haiwezi kurudishwa. Pakua nakala kwanza kama unahitaji data hii.</p>
+        <label class="check"><input type="checkbox" id="wipeBidhaa"> Futa pia bidhaa zote (stoo itaanza tupu)</label>
+        <div class="field full"><label for="wipeConfirm">Andika FUTA kuthibitisha</label><input id="wipeConfirm" autocomplete="off" autocapitalize="characters"></div>
+        <p class="err" id="wipe-err" hidden></p>
+        <div class="actions"><button class="btn danger" type="submit" id="wipeBtn">Futa data</button></div>
+      </form>
     </div>
     <p class="note" id="appVersion"></p>
   </section>
