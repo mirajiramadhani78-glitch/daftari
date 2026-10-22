@@ -172,6 +172,7 @@ body{margin:0;font-size:15px;-webkit-tap-highlight-color:transparent}
 /* base rules the Claude page wrapper used to supply */
 [hidden]{display:none!important}
 img{max-width:100%}
+.gatelang{display:flex;justify-content:space-between;align-items:center;gap:10px}
 </style>
 </head>
 <body>
@@ -184,6 +185,7 @@ img{max-width:100%}
     </div>
     <div class="headbtns">
       <span class="sync" id="syncBadge" data-state="ok">Mtandaoni</span>
+      <button class="ghost" type="button" data-lang-btn translate="no">English</button>
       <button class="ghost" id="settingsBtn" type="button">Mipangilio</button>
     </div>
   </header>
@@ -493,8 +495,8 @@ img{max-width:100%}
 <!-- LOGIN / SIGN-UP: covers the app until someone is signed in and allowed -->
 <div class="gate" id="gate">
   <div class="gatebox">
-    <div class="eyebrow">Daftari la biashara</div>
-    <h1 class="gatetitle" id="gateTitle">Mchina Agrovet</h1>
+    <div class="gatelang"><div class="eyebrow">Daftari la biashara</div><button class="linkbtn" type="button" data-lang-btn translate="no">English</button></div>
+    <h1 class="gatetitle" id="gateTitle" translate="no">Mchina Agrovet</h1>
 
     <div id="gateLoading"><p class="note">Inafungua…</p></div>
 
