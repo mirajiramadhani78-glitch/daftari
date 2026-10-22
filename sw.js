@@ -1,5 +1,5 @@
 // Offline app shell: the app opens without internet; data offline is handled by Firestore's own cache.
-const CACHE='mchina-1.5.0-mvjw31i3';
+const CACHE='mchina-1.6.0-mvjwcjat';
 const SHELL=["./","./app.js","./apple-touch-icon.png","./config.js","./favicon.png","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./index.html","./manifest.webmanifest"];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
