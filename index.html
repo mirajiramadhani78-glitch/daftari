@@ -272,14 +272,14 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="field full"><label for="s-aina">Aina ya mauzo</label>
         <select id="s-aina"><option value="Rejareja" id="s-ainaR">Rejareja · kwa vipande (pcs)</option><option value="Jumla" id="s-ainaJ">Jumla · kwa katoni (ctn)</option></select></div>
       <div class="field"><label for="s-idadi" id="s-idadiL">Idadi (pcs)</label><input id="s-idadi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
-      <div class="field"><label for="s-bei" id="s-beiL">Bei kwa kipande (TSh)</label><input id="s-bei" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="s-bei" id="s-beiL">Bei kwa kipande (TSh)</label><input id="s-bei" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="s-malipo">Malipo</label>
         <select id="s-malipo"><option value="Taslimu">Taslimu</option><option value="Simu">Simu (M-Pesa, Mixx, Airtel)</option><option value="Benki">Benki</option><option value="Mkopo">Mkopo</option></select></div>
       <div class="field"><label for="s-tarehe">Tarehe</label><input id="s-tarehe" type="date"></div>
       <div class="field full" id="s-mtejaWrap"><label for="s-mteja">Mteja (si lazima)</label><input id="s-mteja" maxlength="80" list="customers" placeholder="Jina la mteja" autocomplete="off"></div>
       <div class="subform" id="s-credit" hidden>
         <div class="field"><label for="s-simu">Simu ya mteja</label><input id="s-simu" type="tel" inputmode="tel" maxlength="20" placeholder="07XX XXX XXX"></div>
-        <div class="field"><label for="s-lipa">Amelipa sasa (TSh)</label><input id="s-lipa" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+        <div class="field"><label for="s-lipa">Amelipa sasa (TSh)</label><input id="s-lipa" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       </div>
       <div class="total"><span>Jumla <span id="s-faida" class="s"></span></span><b id="s-jumla">TSh 0</b></div>
       <p class="err" id="s-err" hidden></p>
@@ -310,11 +310,11 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="field"><label for="p-ndogo">Inauzwa rejareja kwa</label>
         <select id="p-ndogo"><option value="pcs">Kipande (pcs)</option><option value="kg">Kilo (kg)</option><option value="lita">Lita</option><option value="pakiti">Pakiti</option><option value="chupa">Chupa</option></select></div>
       <div class="field"><label for="p-n" id="p-nL">Pcs kwenye katoni 1</label><input id="p-n" type="number" inputmode="decimal" min="1" step="any" placeholder="Mfano: 10"></div>
-      <div class="field"><label for="p-nunua" id="p-nunuaL">Bei ya kununua kwa katoni</label><input id="p-nunua" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
-      <div class="field"><label for="p-uza" id="p-uzaL">Bei ya rejareja (kwa kipande)</label><input id="p-uza" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
-      <div class="field"><label for="p-jumla" id="p-jumlaL">Bei ya jumla (kwa katoni)</label><input id="p-jumla" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="p-nunua" id="p-nunuaL">Bei ya kununua kwa katoni</label><input id="p-nunua" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="p-uza" id="p-uzaL">Bei ya rejareja (kwa kipande)</label><input id="p-uza" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="p-jumla" id="p-jumlaL">Bei ya jumla (kwa katoni)</label><input id="p-jumla" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <label class="check"><input type="checkbox" id="p-ruz"> Mbolea ya ruzuku ya serikali</label>
-      <div class="field full" id="p-ruzField" hidden><label for="p-ruzMfuko" id="p-ruzMfukoL">Ruzuku ya serikali kwa mfuko (TSh)</label><input id="p-ruzMfuko" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field full" id="p-ruzField" hidden><label for="p-ruzMfuko" id="p-ruzMfukoL">Ruzuku ya serikali kwa mfuko (TSh)</label><input id="p-ruzMfuko" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field full"><label for="p-chini" id="p-chiniL">Nionye stoo ikifika (ctn)</label><input id="p-chini" type="number" inputmode="decimal" min="0" step="any" placeholder="2"></div>
       <div class="field"><label for="p-ctn" id="p-ctnL">Stoo iliyopo: katoni</label><input id="p-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="p-pcs" id="p-pcsL">na vipande vya ziada</label><input id="p-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
@@ -330,14 +330,14 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="field"><label for="m-ctn" id="m-ctnL">Katoni zilizopokelewa</label><input id="m-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="m-n" id="m-nL">Pcs kwenye katoni 1 (mzigo huu)</label><input id="m-n" type="number" inputmode="decimal" min="1" step="any" placeholder="Mfano: 12"></div>
       <div class="field"><label for="m-pcs" id="m-pcsL">Pcs za ziada nje ya katoni</label><input id="m-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
-      <div class="field"><label for="m-bei" id="m-beiL">Bei ya kununua kwa katoni</label><input id="m-bei" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="m-bei" id="m-beiL">Bei ya kununua kwa katoni</label><input id="m-bei" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="m-tarehe">Tarehe</label><input id="m-tarehe" type="date"></div>
       <div class="field"><label for="m-msambazaji">Msambazaji (si lazima)</label><input id="m-msambazaji" maxlength="80" placeholder="Mfano: Seed Co, Yara"></div>
       <label class="check"><input type="checkbox" id="m-update" checked> <span id="m-updateL">Tumia bei na idadi kwa kifungashio za mzigo huu kama za kawaida za bidhaa hii</span></label>
       <div class="subform" id="m-priceBox" hidden>
         <p class="hint" id="m-priceHint" style="background:none;padding:0"></p>
-        <div class="field"><label for="m-uzaPc" id="m-uzaPcL">Bei mpya ya rejareja</label><input id="m-uzaPc" type="number" inputmode="numeric" min="0" step="any"></div>
-        <div class="field"><label for="m-uzaCtn" id="m-uzaCtnL">Bei mpya ya jumla</label><input id="m-uzaCtn" type="number" inputmode="numeric" min="0" step="any"></div>
+        <div class="field"><label for="m-uzaPc" id="m-uzaPcL">Bei mpya ya rejareja</label><input id="m-uzaPc" type="number" inputmode="decimal" min="0" step="any"></div>
+        <div class="field"><label for="m-uzaCtn" id="m-uzaCtnL">Bei mpya ya jumla</label><input id="m-uzaCtn" type="number" inputmode="decimal" min="0" step="any"></div>
         <p class="hint" id="m-gain" style="background:none;padding:0"></p>
       </div>
       <div class="total"><span>Gharama ya mzigo <span id="m-pcsTot" class="s"></span></span><b id="m-jumla">TSh 0</b></div>
@@ -361,7 +361,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <form class="box" id="oldDebtForm" hidden novalidate style="margin-bottom:12px">
         <div class="field"><label for="o-mteja">Mteja</label><input id="o-mteja" maxlength="80" list="customers" placeholder="Jina la mteja" autocomplete="off"></div>
         <div class="field"><label for="o-simu">Simu (si lazima)</label><input id="o-simu" type="tel" inputmode="tel" maxlength="20"></div>
-        <div class="field"><label for="o-kiasi">Kiasi anachodaiwa (TSh)</label><input id="o-kiasi" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+        <div class="field"><label for="o-kiasi">Kiasi anachodaiwa (TSh)</label><input id="o-kiasi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
         <div class="field"><label for="o-tarehe">Tarehe alipokopa</label><input id="o-tarehe" type="date"></div>
         <div class="field full"><label for="o-maelezo">Maelezo (si lazima)</label><input id="o-maelezo" maxlength="120" placeholder="Mfano: Mbegu za msimu uliopita"></div>
         <p class="hint">Tumia hii kwa madeni yaliyokuwepo kabla ya kuanza kutumia daftari hili. Mikopo mipya inarekodiwa yenyewe ukichagua "Mkopo" kwenye Uza.</p>
@@ -384,7 +384,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       </div>
       <div class="box" id="dStats" style="margin-bottom:12px"></div>
       <form class="box" id="payForm" novalidate>
-        <div class="field"><label for="d-kiasi">Kiasi alicholipa (TSh)</label><input id="d-kiasi" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+        <div class="field"><label for="d-kiasi">Kiasi alicholipa (TSh)</label><input id="d-kiasi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
         <div class="field"><label for="d-njia">Njia ya malipo</label><select id="d-njia"><option value="Taslimu">Taslimu</option><option value="Simu">Simu</option><option value="Benki">Benki</option></select></div>
         <div class="field"><label for="d-tarehe">Tarehe</label><input id="d-tarehe" type="date"></div>
         <div class="field"><label for="d-maelezo">Maelezo (si lazima)</label><input id="d-maelezo" maxlength="120"></div>
@@ -503,7 +503,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     <form class="box" id="expenseForm" novalidate>
       <div class="field"><label for="e-aina">Aina ya matumizi</label>
         <select id="e-aina"><option>Kodi ya pango</option><option>Mishahara</option><option>Usafiri na ubebaji</option><option>Umeme na maji</option><option>Leseni na ushuru</option><option>Mawasiliano</option><option>Mengineyo</option></select></div>
-      <div class="field"><label for="e-kiasi">Kiasi (TSh)</label><input id="e-kiasi" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="e-kiasi">Kiasi (TSh)</label><input id="e-kiasi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="e-tarehe">Tarehe</label><input id="e-tarehe" type="date"></div>
       <div class="field"><label for="e-maelezo">Maelezo (si lazima)</label><input id="e-maelezo" maxlength="120" placeholder="Mfano: Bodaboda kutoka ghala"></div>
       <p class="err" id="e-err" hidden></p>
