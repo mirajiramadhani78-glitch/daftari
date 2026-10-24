@@ -271,7 +271,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <p class="hint" id="s-info" hidden></p>
       <div class="field full"><label for="s-aina">Aina ya mauzo</label>
         <select id="s-aina"><option value="Rejareja" id="s-ainaR">Rejareja · kwa vipande (pcs)</option><option value="Jumla" id="s-ainaJ">Jumla · kwa katoni (ctn)</option></select></div>
-      <div class="field"><label for="s-idadi" id="s-idadiL">Idadi (pcs)</label><input id="s-idadi" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="s-idadi" id="s-idadiL">Idadi (pcs)</label><input id="s-idadi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="s-bei" id="s-beiL">Bei kwa kipande (TSh)</label><input id="s-bei" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="s-malipo">Malipo</label>
         <select id="s-malipo"><option value="Taslimu">Taslimu</option><option value="Simu">Simu (M-Pesa, Mixx, Airtel)</option><option value="Benki">Benki</option><option value="Mkopo">Mkopo</option></select></div>
@@ -309,15 +309,15 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
         <select id="p-kubwa"><option value="Katoni">Katoni (ctn)</option><option value="Mfuko">Mfuko (bag)</option><option value="Boksi">Boksi</option><option value="Dumu">Dumu</option><option value="Bando">Bando</option></select></div>
       <div class="field"><label for="p-ndogo">Inauzwa rejareja kwa</label>
         <select id="p-ndogo"><option value="pcs">Kipande (pcs)</option><option value="kg">Kilo (kg)</option><option value="lita">Lita</option><option value="pakiti">Pakiti</option><option value="chupa">Chupa</option></select></div>
-      <div class="field"><label for="p-n" id="p-nL">Pcs kwenye katoni 1</label><input id="p-n" type="number" inputmode="numeric" min="1" step="any" placeholder="Mfano: 10"></div>
+      <div class="field"><label for="p-n" id="p-nL">Pcs kwenye katoni 1</label><input id="p-n" type="number" inputmode="decimal" min="1" step="any" placeholder="Mfano: 10"></div>
       <div class="field"><label for="p-nunua" id="p-nunuaL">Bei ya kununua kwa katoni</label><input id="p-nunua" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="p-uza" id="p-uzaL">Bei ya rejareja (kwa kipande)</label><input id="p-uza" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="p-jumla" id="p-jumlaL">Bei ya jumla (kwa katoni)</label><input id="p-jumla" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <label class="check"><input type="checkbox" id="p-ruz"> Mbolea ya ruzuku ya serikali</label>
       <div class="field full" id="p-ruzField" hidden><label for="p-ruzMfuko" id="p-ruzMfukoL">Ruzuku ya serikali kwa mfuko (TSh)</label><input id="p-ruzMfuko" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field full"><label for="p-chini" id="p-chiniL">Nionye stoo ikifika (ctn)</label><input id="p-chini" type="number" inputmode="decimal" min="0" step="any" placeholder="2"></div>
-      <div class="field"><label for="p-ctn" id="p-ctnL">Stoo iliyopo: katoni</label><input id="p-ctn" type="number" inputmode="numeric" min="0" step="1" placeholder="0"></div>
-      <div class="field"><label for="p-pcs" id="p-pcsL">na vipande vya ziada</label><input id="p-pcs" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="p-ctn" id="p-ctnL">Stoo iliyopo: katoni</label><input id="p-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="p-pcs" id="p-pcsL">na vipande vya ziada</label><input id="p-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <p class="hint" id="p-calc">Weka vipande kwa katoni na bei kuona gharama na faida kwa kipande.</p>
       <p class="hint" id="p-hint" hidden>Ukibadilisha stoo iliyopo, itahesabiwa upya kuanzia hapo pamoja na mzigo na mauzo yaliyorekodiwa.</p>
       <p class="err" id="p-err" hidden></p>
@@ -327,9 +327,9 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     <form class="box" id="purchaseForm" hidden novalidate>
       <div class="field full"><label for="m-bidhaa">Bidhaa</label><select id="m-bidhaa"></select></div>
       <p class="hint" id="m-info" hidden></p>
-      <div class="field"><label for="m-ctn" id="m-ctnL">Katoni zilizopokelewa</label><input id="m-ctn" type="number" inputmode="numeric" min="0" step="1" placeholder="0"></div>
-      <div class="field"><label for="m-n" id="m-nL">Pcs kwenye katoni 1 (mzigo huu)</label><input id="m-n" type="number" inputmode="numeric" min="1" step="any" placeholder="Mfano: 12"></div>
-      <div class="field"><label for="m-pcs" id="m-pcsL">Pcs za ziada nje ya katoni</label><input id="m-pcs" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="m-ctn" id="m-ctnL">Katoni zilizopokelewa</label><input id="m-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="m-n" id="m-nL">Pcs kwenye katoni 1 (mzigo huu)</label><input id="m-n" type="number" inputmode="decimal" min="1" step="any" placeholder="Mfano: 12"></div>
+      <div class="field"><label for="m-pcs" id="m-pcsL">Pcs za ziada nje ya katoni</label><input id="m-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="m-bei" id="m-beiL">Bei ya kununua kwa katoni</label><input id="m-bei" type="number" inputmode="numeric" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="m-tarehe">Tarehe</label><input id="m-tarehe" type="date"></div>
       <div class="field"><label for="m-msambazaji">Msambazaji (si lazima)</label><input id="m-msambazaji" maxlength="80" placeholder="Mfano: Seed Co, Yara"></div>
