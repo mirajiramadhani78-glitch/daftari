@@ -193,6 +193,10 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
 .sheet tfoot td{background:var(--accent);color:var(--accent-ink);font-weight:700;border-bottom:0}
 .repsec{font-size:16px;margin-top:4px}
 .btn.danger{background:var(--bad);color:#fff}
+
+/* basket of products for one customer */
+.rows.cart{margin:0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.rows.cart li{padding:10px 12px}
 </style>
 </head>
 <body>
@@ -273,6 +277,8 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
         <select id="s-aina"><option value="Rejareja" id="s-ainaR">Rejareja · kwa vipande (pcs)</option><option value="Jumla" id="s-ainaJ">Jumla · kwa katoni (ctn)</option></select></div>
       <div class="field"><label for="s-idadi" id="s-idadiL">Idadi (pcs)</label><input id="s-idadi" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="s-bei" id="s-beiL">Bei kwa kipande (TSh)</label><input id="s-bei" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field full"><button class="btn alt" type="button" id="s-addLine">＋ Ongeza bidhaa nyingine kwa mteja huyu</button></div>
+      <div class="field full" id="s-cartWrap" hidden><label>Bidhaa za mteja huyu <span id="s-cartN"></span></label><ul class="rows cart" id="s-cart"></ul></div>
       <div class="field"><label for="s-malipo">Malipo</label>
         <select id="s-malipo"><option value="Taslimu">Taslimu</option><option value="Simu">Simu (M-Pesa, Mixx, Airtel)</option><option value="Benki">Benki</option><option value="Mkopo">Mkopo</option></select></div>
       <div class="field"><label for="s-tarehe">Tarehe</label><input id="s-tarehe" type="date"></div>
