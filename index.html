@@ -305,6 +305,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     <div class="toolbar">
       <button class="btn" type="button" id="openProduct">Ongeza bidhaa mpya</button>
       <button class="btn alt" type="button" id="openPurchase">Pokea mzigo</button>
+      <button class="btn alt" type="button" id="openCount">Hesabu stoo</button>
     </div>
 
     <form class="box" id="productForm" hidden novalidate>
@@ -353,8 +354,27 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="actions"><button class="btn" type="submit">Ingiza stoo</button><button class="btn alt" type="button" id="m-cancel">Funga</button></div>
     </form>
 
+    <form class="box" id="countForm" hidden novalidate>
+      <p class="hint full">Chagua bidhaa mliyohesabu dukani, andika idadi mliyoikuta, kisha bonyeza "Ongeza". Mkimaliza bidhaa za leo, bonyeza "Hifadhi hesabu": stoo ya mfumo itarekebishwa ilingane na mlichohesabu.</p>
+      <p class="err full" id="countDenied" hidden>Hesabu haziwezi kuhifadhiwa bado: kanuni za Firebase hazijasasishwa. Mwambie mmiliki aweke kanuni mpya (hesabuStoo).</p>
+      <div class="field full"><label for="c-bidhaa">Bidhaa</label><select id="c-bidhaa"></select></div>
+      <p class="hint full" id="c-sys" hidden></p>
+      <div class="field" id="c-ctnWrap" hidden><label for="c-ctn" id="c-ctnL">Katoni zilizopo</label><input id="c-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field"><label for="c-pcs" id="c-pcsL">Pcs zilizopo</label><input id="c-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
+      <div class="field full"><button class="btn alt" type="button" id="c-add">＋ Ongeza kwenye hesabu</button></div>
+      <div class="field full" id="c-listWrap" hidden><label>Bidhaa mlizohesabu</label><ul class="rows cart" id="c-list"></ul><p class="hint" id="c-sum" style="margin-top:8px"></p></div>
+      <div class="field"><label for="c-tarehe">Tarehe</label><input id="c-tarehe" type="date"></div>
+      <div class="field"><label for="c-maelezo">Maelezo (si lazima)</label><input id="c-maelezo" maxlength="120" placeholder="Mfano: kabati la dawa"></div>
+      <p class="err" id="c-err" hidden></p>
+      <div class="actions"><button class="btn" type="submit" id="c-submit">Hifadhi hesabu</button><button class="btn alt" type="button" id="c-cancel">Funga</button></div>
+    </form>
+
     <div class="panel" style="margin-top:14px">
       <div class="box" id="productList"></div>
+    </div>
+    <div class="panel">
+      <h2>Hesabu za stoo zilizopita</h2>
+      <div class="box" id="countList"></div>
     </div>
   </section>
 
