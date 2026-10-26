@@ -12,6 +12,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>try{var t=localStorage.getItem('mchina-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
 
 /* Layout: ledger in one column (max 720px); period bar on top, views in the middle, tab bar fixed at the bottom */
@@ -199,6 +200,70 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
 .rows.cart li{padding:10px 12px}
 
 .kundisel{margin-left:auto;color:var(--ink);font-weight:600;background:var(--surface)}
+
+/* ---- chart colours (validated for colour blindness, light and dark) ---- */
+:root{--c1:#1c6a3a;--c2:#3b6fd4}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--c1:#3a9e62;--c2:#5d86e0}}
+:root[data-theme="dark"]{--c1:#3a9e62;--c2:#5d86e0}
+
+/* ---- welcome / sign-in screen ---- */
+.gate{padding:0}
+.gatehero{position:relative;overflow:hidden;color:#fff;
+  background:radial-gradient(110% 80% at 100% 0%,rgba(229,165,10,.32),transparent 55%),linear-gradient(160deg,#1f7442 0%,#134d2c 75%);
+  padding:calc(env(safe-area-inset-top,0px) + 22px) max(20px,env(safe-area-inset-right,0px)) 92px max(20px,env(safe-area-inset-left,0px))}
+.gateheroin{position:relative;z-index:1;max-width:420px;margin:0 auto}
+.gatehero .eyebrow{color:rgba(255,255,255,.8)}
+.gatetools{display:flex;gap:8px;align-items:center}
+.gatehero .linkbtn{color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 12px;font-size:13px}
+.gatebrand{display:flex;align-items:center;gap:12px;margin-top:22px}
+.gatelogo{width:54px;height:54px;flex-shrink:0;border-radius:16px;box-shadow:0 10px 24px -10px rgba(0,0,0,.45)}
+.gatehero .gatetitle{color:#fff;margin:0;font-size:clamp(28px,8.5vw,36px);font-weight:800;letter-spacing:-.02em}
+.gatetag{margin:12px 0 0;font-size:16px;line-height:1.45;color:rgba(255,255,255,.9);max-width:32ch}
+.gateperks{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:7px}
+.gateperks li{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600}
+.gateperks svg{width:20px;height:20px;flex-shrink:0;padding:3px;border-radius:50%;background:#E5A50A;stroke:#2b1d00;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.gatefield{position:absolute;right:0;bottom:56px;width:min(420px,95%);height:auto;color:rgba(255,255,255,.16)}
+.gate .gatebox{position:relative;z-index:2;max-width:420px;margin:-58px auto 24px;background:var(--surface);border-radius:22px;padding:20px 18px 22px;
+  box-shadow:0 24px 50px -28px rgba(18,40,26,.55),0 0 0 1px var(--line)}
+@media (max-width:452px){.gate .gatebox{margin-left:16px;margin-right:16px}}
+.gate .gateform{margin-top:0}
+.gatehead h2{font-size:22px;font-weight:800}
+.gate .gateform .btn{padding:14px 18px;font-size:16px;border-radius:12px}
+#gateLoading .note{text-align:center;margin:6px 0}
+
+/* ---- theme button ---- */
+.themebtn{display:inline-flex;align-items:center;gap:6px}
+.themebtn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- charts ---- */
+.chartbox{padding:12px 12px 8px}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);font-weight:600}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block}
+.sw.bar{width:10px;height:10px;border-radius:3px;background:var(--c1)}
+.sw.line{width:16px;height:0;border-top:2px solid var(--c2);position:relative}
+.sw.line::after{content:"";position:absolute;left:5px;top:-5px;width:6px;height:6px;border-radius:50%;background:var(--c2);box-shadow:0 0 0 2px var(--surface)}
+.charttip{margin:8px 0 2px;font-size:13px;color:var(--muted);min-height:1.45em}
+.charttip b{color:var(--ink);font-variant-numeric:tabular-nums}
+.chart{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .base{stroke:var(--muted);stroke-width:1;opacity:.6}
+.chart .ax{fill:var(--muted);font-size:10.5px;font-family:var(--f-body)}
+.chart .bar{fill:var(--c1)}
+.chart .bar.dim{opacity:.35}
+.chart .pline{fill:none;stroke:var(--c2);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .pdot{fill:var(--c2);stroke:var(--surface);stroke-width:2}
+.chart .hit{fill:transparent;cursor:pointer}
+.chart .hit.on{fill:var(--sunk);opacity:.55}
+.kbars{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.kbars li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:baseline;font-size:14px}
+.kbars .kv{font-variant-numeric:tabular-nums;font-weight:700}
+.kbars .kv small{color:var(--muted);font-weight:600;margin-left:6px}
+.kbars .track{grid-column:1/-1;height:10px;border-radius:5px;background:var(--sunk);overflow:hidden}
+.kbars .fill{display:block;height:100%;border-radius:5px;background:var(--c1)}
+.chart .bar,.chart .pline,.chart .pdot,.chart .ax,.chart .grid,.chart .base{pointer-events:none}
+.themebtn{white-space:nowrap;padding-inline:10px!important;min-width:36px;justify-content:center}
+.themebtn svg{width:16px;height:16px}
 </style>
 </head>
 <body>
@@ -211,6 +276,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     </div>
     <div class="headbtns">
       <span class="sync" id="syncBadge" data-state="ok">Mtandaoni</span>
+      <button class="ghost themebtn" type="button" data-theme-btn></button>
       <button class="ghost" type="button" data-lang-btn translate="no">English</button>
       <button class="ghost" id="settingsBtn" type="button">Mipangilio</button>
     </div>
@@ -241,6 +307,19 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <button type="button" class="act" data-act="pokea"><svg viewBox="0 0 24 24"><path d="M12 3v8M8.5 7.5 12 11l3.5-3.5"/><path d="M3 12l9 4 9-4M3 12v6l9 4 9-4v-6"/></svg>Pokea stock</button>
       <button type="button" class="act" data-act="uza"><svg viewBox="0 0 24 24"><path d="M3 12l9 4 9-4M3 12v6l9 4 9-4v-6"/><path d="M12 11V3M8.5 6.5 12 3l3.5 3.5"/></svg>Uza</button>
       <button type="button" class="act" data-act="ripoti"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 17v-3M12 17v-6M15 17v-4"/></svg>Ripoti</button>
+    </div>
+
+    <div class="panel" id="chartPanel">
+      <h2>Mauzo na faida <small id="chartSub"></small></h2>
+      <div class="box chartbox">
+        <div class="legend"><span><i class="sw bar"></i>Mauzo</span><span><i class="sw line"></i>Faida</span></div>
+        <p class="charttip" id="chartTip">Gusa siku kuona namba zake</p>
+        <div id="chartMain"></div>
+      </div>
+    </div>
+    <div class="panel" id="kundiPanel" hidden>
+      <h2>Mauzo kwa kundi <small>kipindi hiki</small></h2>
+      <div class="box chartbox" id="chartKundi"></div>
     </div>
 
     <div class="box">
@@ -560,9 +639,20 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
 
 <!-- LOGIN / SIGN-UP: covers the app until someone is signed in and allowed -->
 <div class="gate" id="gate">
+  <div class="gatehero">
+   <div class="gateheroin">
+    <div class="gatelang"><div class="eyebrow">Daftari la biashara</div><div class="gatetools"><button class="linkbtn themebtn" type="button" data-theme-btn></button><button class="linkbtn" type="button" data-lang-btn translate="no">English</button></div></div>
+    <div class="gatebrand"><svg class="gatelogo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#fff"/><path d="M32 50V30" stroke="#1c6a3a" stroke-width="4" stroke-linecap="round"/><path d="M32 32c-2-8-9-12-17-11 1 8 8 12 17 11z" fill="#1c6a3a"/><path d="M32 30c2-9 10-14 19-12-1 9-9 14-19 12z" fill="#1c6a3a"/><path d="M16 51h32" stroke="#E5A50A" stroke-width="4" stroke-linecap="round"/></svg><h1 class="gatetitle" id="gateTitle" translate="no">Mchina Agrovet</h1></div>
+    <p class="gatetag">Mbegu, dawa na mbolea: mauzo, stoo na faida ya duka lako kila siku.</p>
+    <ul class="gateperks">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Mauzo ya jumla na rejareja</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Stoo kwa katoni, mifuko na vipande</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Ripoti kwa bosi: PDF, Excel, WhatsApp</li>
+    </ul>
+   </div>
+   <svg class="gatefield" viewBox="0 0 360 70" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><g transform="translate(40,68) scale(0.8)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><g transform="translate(95,66) scale(1.1)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><g transform="translate(150,68) scale(0.9)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><g transform="translate(205,65) scale(1.3)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><g transform="translate(262,67) scale(1)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><g transform="translate(318,64) scale(1.4)"><path d="M0 0v-18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M0-14c-2-6-7-9-13-8 1 6 6 9 13 8z" fill="currentColor"/><path d="M0-16c2-7 8-10 14-9-1 7-7 10-14 9z" fill="currentColor"/></g><path d="M0 68.5h360" stroke="currentColor" stroke-width="1.5" opacity=".6"/></svg>
+  </div>
   <div class="gatebox">
-    <div class="gatelang"><div class="eyebrow">Daftari la biashara</div><button class="linkbtn" type="button" data-lang-btn translate="no">English</button></div>
-    <h1 class="gatetitle" id="gateTitle" translate="no">Mchina Agrovet</h1>
 
     <div id="gateLoading"><p class="note">Inafungua…</p></div>
 
@@ -571,6 +661,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     </div>
 
     <form id="loginForm" class="gateform" hidden novalidate>
+      <div class="gatehead"><h2>Karibu tena</h2></div>
       <div class="field"><label for="li-email">Barua pepe</label><input id="li-email" type="email" inputmode="email" autocomplete="username"></div>
       <div class="field"><label for="li-pass">Nenosiri</label><input id="li-pass" type="password" autocomplete="current-password"></div>
       <p class="err" id="li-err" hidden></p>
@@ -579,6 +670,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     </form>
 
     <form id="signupForm" class="gateform" hidden novalidate>
+      <div class="gatehead"><h2>Fungua akaunti</h2></div>
       <div class="field"><label for="su-jina">Jina lako</label><input id="su-jina" maxlength="60" autocomplete="name"></div>
       <div class="field"><label for="su-email">Barua pepe</label><input id="su-email" type="email" inputmode="email" autocomplete="username"></div>
       <div class="field"><label for="su-pass">Nenosiri (herufi 6 au zaidi)</label><input id="su-pass" type="password" autocomplete="new-password"></div>
