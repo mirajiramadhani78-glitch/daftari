@@ -264,6 +264,15 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
 .chart .bar,.chart .pline,.chart .pdot,.chart .ax,.chart .grid,.chart .base{pointer-events:none}
 .themebtn{white-space:nowrap;padding-inline:10px!important;min-width:36px;justify-content:center}
 .themebtn svg{width:16px;height:16px}
+
+/* ---- product search ---- */
+.psearch,#stooSearch{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 12px 10px 36px;font-size:15px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356655b' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:11px 50%;background-size:17px}
+.psearch{margin-bottom:8px}
+.stoosearch{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.stoosearch .periods{margin:0}
+.stoosearch .range{margin:0}
 </style>
 </head>
 <body>
@@ -352,7 +361,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
   <section class="view" id="v-uza" hidden>
     <h2 class="sec-title">Rekodi mauzo</h2>
     <form class="box" id="saleForm" novalidate>
-      <div class="field full"><label for="s-bidhaa">Bidhaa</label><select id="s-bidhaa"></select></div>
+      <div class="field full"><label for="s-bidhaa">Bidhaa</label><input type="search" class="psearch" data-for="s-bidhaa" placeholder="Tafuta bidhaa…" autocomplete="off" enterkeyhint="search" aria-label="Tafuta bidhaa"><select id="s-bidhaa"></select></div>
       <p class="hint" id="s-info" hidden></p>
       <div class="field full"><label for="s-aina">Aina ya mauzo</label>
         <select id="s-aina"><option value="Rejareja" id="s-ainaR">Rejareja · kwa vipande (pcs)</option><option value="Jumla" id="s-ainaJ">Jumla · kwa katoni (ctn)</option></select></div>
@@ -413,7 +422,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     </form>
 
     <form class="box" id="purchaseForm" hidden novalidate>
-      <div class="field full"><label for="m-bidhaa">Bidhaa</label><select id="m-bidhaa"></select></div>
+      <div class="field full"><label for="m-bidhaa">Bidhaa</label><input type="search" class="psearch" data-for="m-bidhaa" placeholder="Tafuta bidhaa…" autocomplete="off" enterkeyhint="search" aria-label="Tafuta bidhaa"><select id="m-bidhaa"></select></div>
       <p class="hint" id="m-info" hidden></p>
       <div class="field"><label for="m-ctn" id="m-ctnL">Katoni zilizopokelewa</label><input id="m-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="m-n" id="m-nL">Pcs kwenye katoni 1 (mzigo huu)</label><input id="m-n" type="number" inputmode="decimal" min="1" step="any" placeholder="Mfano: 12"></div>
@@ -436,7 +445,7 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
     <form class="box" id="countForm" hidden novalidate>
       <p class="hint full">Chagua bidhaa mliyohesabu dukani, andika idadi mliyoikuta, kisha bonyeza "Ongeza". Mkimaliza bidhaa za leo, bonyeza "Hifadhi hesabu": stoo ya mfumo itarekebishwa ilingane na mlichohesabu.</p>
       <p class="err full" id="countDenied" hidden>Hesabu haziwezi kuhifadhiwa bado: kanuni za Firebase hazijasasishwa. Mwambie mmiliki aweke kanuni mpya (hesabuStoo).</p>
-      <div class="field full"><label for="c-bidhaa">Bidhaa</label><select id="c-bidhaa"></select></div>
+      <div class="field full"><label for="c-bidhaa">Bidhaa</label><input type="search" class="psearch" data-for="c-bidhaa" placeholder="Tafuta bidhaa…" autocomplete="off" enterkeyhint="search" aria-label="Tafuta bidhaa"><select id="c-bidhaa"></select></div>
       <p class="hint full" id="c-sys" hidden></p>
       <div class="field" id="c-ctnWrap" hidden><label for="c-ctn" id="c-ctnL">Katoni zilizopo</label><input id="c-ctn" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
       <div class="field"><label for="c-pcs" id="c-pcsL">Pcs zilizopo</label><input id="c-pcs" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div>
@@ -448,7 +457,19 @@ table.sheet{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;f
       <div class="actions"><button class="btn" type="submit" id="c-submit">Hifadhi hesabu</button><button class="btn alt" type="button" id="c-cancel">Funga</button></div>
     </form>
 
-    <div class="panel" style="margin-top:14px">
+    <div class="stoosearch">
+      <input type="search" id="stooSearch" placeholder="Tafuta bidhaa kwa jina, kipimo au kundi…" autocomplete="off" enterkeyhint="search" aria-label="Tafuta bidhaa">
+      <div class="periods" id="stooFilter">
+        <button class="chip" type="button" data-sk="zote" aria-pressed="true">Zote</button>
+        <button class="chip" type="button" data-sk="Mbegu" aria-pressed="false">Mbegu</button>
+        <button class="chip" type="button" data-sk="Dawa" aria-pressed="false">Dawa</button>
+        <button class="chip" type="button" data-sk="Mbolea" aria-pressed="false">Mbolea</button>
+        <button class="chip" type="button" data-sk="Vinginevyo" aria-pressed="false">Vinginevyo</button>
+        <button class="chip" type="button" data-sk="inaisha" aria-pressed="false">Zinaisha</button>
+      </div>
+      <p class="range" id="stooCount"></p>
+    </div>
+    <div class="panel" style="margin-top:6px">
       <div class="box" id="productList"></div>
     </div>
     <div class="panel">
